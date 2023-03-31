@@ -1,30 +1,40 @@
-### Welcome to Intellego!
+# Intellego
 
-This is a dashboard for teachers to create and administer casual formative assessments during class time, and track and review data on student performance.
+<img src="public/images/readme/landingPage.png" alt="Landing page"/>
 
-To begin, log in or sign up for an account. You will be taken to your dashboard, where you can view and create courses, view and create assessments, and view all students. Also available are reports displaying performance data broken down by courses, students and assessments, all of which can be exported.
+## Table of Contents
 
-Assessments, once created and assigned to a course, will be sent to students for them to be filled out. They will be given a unique ID number to verify their identity before submitting. Once they submit, teachers will be able to view and grade submissions. Assessments may also be assigned to other courses, or just edited if there are no submissions.
+- [Background](#background)
+- [Live Site](#live-site)
+- [Technologies](#technologies)
 
+## Background
 
+Welcome to Intellego, a teacher-friendly site for creating impromptu student assessments and reviewing data about student learning. Made specifically for teachers, Intellego offers a variety of data visualization tools, in addition to ways of creating speedy prompts for student learning. Created by Amy Chun, Natalie Dudar, Na Lin, Madeleine Lloyd-Davies, and Natalie Ricci, Intellego represents new, convenient ways to appraise and envision student learning.
 
-### Steps to set up project
+## Live Site
 
-1. Create a PostgreSQL Database with the name `intellego`
-2. Clone the project main branch to your local computer
-3. Add`.env` file to the root directory of the project folder
-4. Paste this content to the .env file:
+Please follow the link (<a href="https://intellego.onrender.com/" target="_blank"> Live-Site </a>) to check out Intellego for yourself!
 
+Note this is a free Render account, so please be patient with any latencies you may experience:)
 
-5. Run `npm install` to install packages
-6. Run `npm run seed` to seed data to database
-7. Run `npm run start:dev` to run the project
-8. In browser, go to url : `localhost:8080`
-9. Log in with existing account or sign up with new account
+## Technologies
 
-   ```jsx
-   email: kara@email.com
-   password: 123123
-   ```
-10. To view a submission form, visit this url : [localhost:3015/student/courses/114/assessments/105](http://localhost:8080/student/courses/114/assessments/105)
-    - verify student ID with 100
+- Front-end
+
+  - ReactJS
+  - Redux
+  - Bootstrap
+  - Chart.js
+  - Formik & yup
+  - HTML
+  - CSS
+  - Webpack
+
+- Back-end
+  - Node.js
+  - Express.js
+  - PostgreSQL
+  - Sequelize
+  - JSON Web Token
+  - Bcrypt
