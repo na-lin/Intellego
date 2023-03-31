@@ -7,6 +7,8 @@
 - [Background](#background)
 - [Live Site](#live-site)
 - [Technologies](#technologies)
+- [Tutorial of Intellego](#tutorial-of-intellego)
+  - [User login/signup](#user-loginsignup)
 
 ## Background
 
@@ -38,3 +40,9 @@ Note this is a free Render account, so please be patient with any latencies you 
   - Sequelize
   - JSON Web Token
   - Bcrypt
+
+## Tutorial of Intellego
+
+### User login/signup
+
+<img src="public/images/readme/login.gif" alt="login.gif"/>
