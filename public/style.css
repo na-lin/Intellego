@@ -21,9 +21,16 @@ table {
   background-color: #fd7607 !important;
   border: thin #fd7607 solid !important;
 }
+.orangeButton:hover {
+  opacity: 0.8 !important;
+}
+
 .blueButton {
   background-color: #3281a6 !important;
   border: none !important;
+}
+.blueButton:hover {
+  opacity: 0.8 !important;
 }
 
 a#nav-dropdown.dropdown-toggle.show.nav-link {
@@ -46,7 +53,6 @@ a.dropdown-item.active {
 .card-title {
   font-size: 17px !important;
 }
-
 
 /*Dashbaord*/
 h1:after {

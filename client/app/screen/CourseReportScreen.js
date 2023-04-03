@@ -239,11 +239,10 @@ export default function CourseReportScreen() {
       {currentCourse && allGrades && allGrades.length ? (
         <Button
           onClick={handleExport}
+          className="blueButton"
           style={{
             float: "right",
             position: "relative",
-            color: "white",
-            backgroundColor: "#017296",
           }}
         >
           Export
