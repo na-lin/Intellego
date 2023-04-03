@@ -49,3 +49,5 @@ To access Intellego, you can log in with your registered email and password. If 
 
 It's important to note that we take security seriously, and all login and sign-up processes are encrypted and designed to protect your personal information.
 <img src="public/images/readme/login.gif" alt="login.gif"/>
+
+###
