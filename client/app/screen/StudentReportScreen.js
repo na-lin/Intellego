@@ -300,10 +300,10 @@ export default function StudentReportScreen() {
         <Button
           variant="primary"
           onClick={handleExport}
+          className="blueButton"
           style={{
             float: "right",
             position: "relative",
-            backgroundColor: "#017296",
           }}
         >
           Export
