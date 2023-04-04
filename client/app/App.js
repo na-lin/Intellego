@@ -1,4 +1,4 @@
-//react & redux
+//react
 import React from "react";
 
 // Router
@@ -28,12 +28,7 @@ import {
   StudentViewScreen,
 } from "./screen";
 
-import { useSelector } from "react-redux";
-import { selectAuthState } from "./store/slices/authSlice";
-
 export default function App() {
-  const { user } = useSelector(selectAuthState);
-
   return (
     <Routes>
       <Route
@@ -44,7 +39,6 @@ export default function App() {
           </ProtectedRoute>
         }
       >
-        {/* Home */}
         <Route index element={<DashHome />} />
         <Route path="/faq" element={<FAQ />} />
 
