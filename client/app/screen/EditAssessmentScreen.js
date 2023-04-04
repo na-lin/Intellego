@@ -41,6 +41,9 @@ import {
   ExclamationDiamondFill,
 } from "react-bootstrap-icons";
 
+// React Router
+import { Link } from "react-router-dom";
+
 const EditAssessmentScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -152,6 +155,9 @@ const EditAssessmentScreen = () => {
 
   return (
     <>
+      <Button className="blueButton my-margin-1" as={Link} to="/assessments">
+        Go Back
+      </Button>
       <Form onSubmit={handleSubmit}>
         <h1>
           {assessmentTitle || ""}

@@ -33,6 +33,10 @@ table {
   opacity: 0.8 !important;
 }
 
+.my-margin-1 {
+  margin-top: 10px;
+}
+
 a#nav-dropdown.dropdown-toggle.show.nav-link {
   background-color: #3281a6 !important;
   color: #fff !important;
