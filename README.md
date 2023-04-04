@@ -16,7 +16,7 @@ Welcome to Intellego, a teacher-friendly site for creating impromptu student ass
 
 ## Live Site
 
-Please follow the link (<a href="https://intellego.onrender.com/" target="_blank"> Live-Site </a>) to check out Intellego for yourself!
+Please follow the link (<a href="https://intellego-9ctf.onrender.com/" target="_blank"> Live-Site </a>) to check out Intellego for yourself!
 
 Note this is a free Render account, so please be patient with any latencies you may experience:)
 
@@ -47,5 +47,4 @@ Note this is a free Render account, so please be patient with any latencies you 
 To access Intellego, you can log in with your registered email and password. If you're a new user, you can create a new account by providing your name, email, and password during the sign-up process. This will give you access to all the features and benefits of Intellego.
 
 It's important to note that we take security seriously, and all login and sign-up processes are encrypted and designed to protect your personal information.
-
 <img src="public/images/readme/login.gif" alt="login.gif"/>
