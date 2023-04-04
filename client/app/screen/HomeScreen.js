@@ -36,7 +36,7 @@ const HomeScreen = () => {
           <br />
           <Button
             as={Link}
-            to={"login"}
+            to="/login"
             className="orangeButton"
             style={{ width: "70%" }}
           >
@@ -45,7 +45,7 @@ const HomeScreen = () => {
 
           <Button
             as={Link}
-            to={"signup"}
+            to="/signup"
             className="orangeButton"
             style={{ width: "70%", marginTop: "20px" }}
           >
