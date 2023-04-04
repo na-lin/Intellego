@@ -1,10 +1,17 @@
 //react
-import React from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { selectAuthState, logout } from "../store/slices/authSlice";
+import React, { useEffect } from "react";
 
-//stying
+// React router
+import { Link, useNavigate } from "react-router-dom";
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectAuthState } from "../store/slices/authSlice";
+
+// components
+import { LoadingSpinner } from "../components";
+
+// React Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,12 +19,29 @@ import Button from "react-bootstrap/Button";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  let navigate = useNavigate();
-
+  const navigate = useNavigate();
   const { isLoading, user } = useSelector(selectAuthState);
-  const handleLogout = () => {
-    dispatch(logout());
+
+  // Navigate user to dashboard if user login as demo user.
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
+
+  // User login as demo user.
+  const handleDemoLogin = () => {
+    dispatch(
+      login({
+        email: "kara@email.com",
+        password: "123123",
+      })
+    );
   };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <Container className="landingContainer">
@@ -51,11 +75,17 @@ const HomeScreen = () => {
           >
             Sign up
           </Button>
+          <Button
+            className="blueButton"
+            style={{ width: "70%", marginTop: "20px" }}
+            onClick={handleDemoLogin}
+          >
+            Login as Demo User
+          </Button>
         </Col>
         <Col className="right_slide">
           <img src={"/assets/landing_test_image.png"} alt="landing page" />
         </Col>
-        <Outlet />
       </Row>
     </Container>
   );
