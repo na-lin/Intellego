@@ -1,8 +1,8 @@
 //react
-import React, { useEffect } from "react";
+import React from "react";
 
 // React router
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -19,15 +19,12 @@ import Button from "react-bootstrap/Button";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { isLoading, user } = useSelector(selectAuthState);
 
   // Navigate user to dashboard if user login as demo user.
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, [user]);
+  if (user) {
+    return <Navigate to="/" />;
+  }
 
   // User login as demo user.
   const handleDemoLogin = () => {
