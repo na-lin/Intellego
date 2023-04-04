@@ -1,49 +1,94 @@
-//react & redux
+//react
 import React from "react";
+
 // Router
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// Screen
-import MainDashboardScreen from "./screen/MainDashboardScreen";
-import StudentViewScreen from "./screen/StudentViewScreen";
-import DashHome from "./screen/DashHome";
+import { Routes, Route } from "react-router-dom";
 
-import HomeScreen from "./screen/HomeScreen";
-import LogInScreen from "./screen/LogInScreen";
-import SignUpScreen from "./screen/SignUpScreen";
+// Components
+import { SharedLayout, ProtectedRoute } from "./components";
 
-import { useSelector } from "react-redux";
-import { selectAuthState } from "./store/slices/authSlice";
+// Screens
+import {
+  HomeScreen,
+  LogInScreen,
+  SignUpScreen,
+  DashHome,
+  FAQ,
+  CourseScreen,
+  CourseStudentScreen,
+  CourseAssessmentsScreen,
+  AssessmentsScreen,
+  CreateAssessmentScreen,
+  EditAssessmentScreen,
+  GradingScreen,
+  StudentReportScreen,
+  AssessmentReportScreen,
+  CourseReportScreen,
+  NotFound,
+  StudentViewScreen,
+} from "./screen";
 
 export default function App() {
-  const { user } = useSelector(selectAuthState);
-
   return (
-    <>
-      {user ? (
-        <>
-          <Routes>
-            <Route path="*" element={<MainDashboardScreen />} />
-            <Route
-              path="/student/courses/:courseId/assessments/:assessmentId"
-              element={<StudentViewScreen />}
-            />
-            <Route path="/login" element={<LogInScreen />} />
-            <Route path="/signup" element={<SignUpScreen />} />
-          </Routes>
-        </>
-      ) : (
-        <>
-          <Routes>
-            <Route path="/" element={<HomeScreen />} />
-            <Route path="/login" element={<LogInScreen />} />
-            <Route path="/signup" element={<SignUpScreen />} />
-            <Route
-              path="/student/courses/:courseId/assessments/:assessmentId"
-              element={<StudentViewScreen />}
-            />
-          </Routes>
-        </>
-      )}
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <SharedLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<DashHome />} />
+        <Route path="/faq" element={<FAQ />} />
+
+        {/* Course */}
+        <Route path="/courses" element={<CourseScreen />} />
+
+        <Route
+          path="/courses/:courseId/students"
+          element={<CourseStudentScreen />}
+        />
+        <Route
+          path="/courses/:courseId/assessments"
+          element={<CourseAssessmentsScreen />}
+        />
+        {/* Assessment */}
+
+        <Route path="/assessments" element={<AssessmentsScreen />} />
+
+        <Route
+          path="/assessments/create"
+          element={<CreateAssessmentScreen />}
+        />
+        <Route
+          path="/assessments/:assessmentId"
+          element={<EditAssessmentScreen />}
+        />
+        <Route
+          path="/assessments/:assessmentId/grades"
+          element={<GradingScreen />}
+        />
+        {/* Report */}
+        <Route path="/report/students" element={<StudentReportScreen />} />
+        <Route
+          path="/report/assessments"
+          element={<AssessmentReportScreen />}
+        />
+
+        <Route path="/report/courses/" element={<CourseReportScreen />} />
+
+        {/* Not Found */}
+        <Route path="*" element={<NotFound />} />
+      </Route>
+
+      <Route path="landing" element={<HomeScreen />} />
+      <Route path="/login" element={<LogInScreen />} />
+      <Route path="/signup" element={<SignUpScreen />} />
+      <Route
+        path="/student/courses/:courseId/assessments/:assessmentId"
+        element={<StudentViewScreen />}
+      />
+    </Routes>
   );
 }

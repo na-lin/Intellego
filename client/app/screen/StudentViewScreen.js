@@ -194,7 +194,7 @@ export default function StudentViewScreen() {
           onClose={() => setShowToast(false)}
           delay={3000}
           autohide
-          bg="danger"
+          bg={verifyResult ? "success" : "danger"}
         >
           <Toast.Header>Verify Result</Toast.Header>
           <Toast.Body>
