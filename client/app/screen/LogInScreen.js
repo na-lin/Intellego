@@ -41,13 +41,6 @@ const LogInScreen = () => {
   });
 
   useEffect(() => {
-    if (user) {
-      setShowToast(true);
-      navigate("/");
-    }
-  }, [user]);
-
-  useEffect(() => {
     if (error) {
       setVisible(true);
     }
@@ -70,6 +63,10 @@ const LogInScreen = () => {
 
   if (isLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (user) {
+    return <Navigate to="/" />;
   }
 
   return (
