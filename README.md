@@ -7,8 +7,6 @@
 - [Background](#background)
 - [Live Site](#live-site)
 - [Technologies](#technologies)
-- [Tutorial of Intellego](#tutorial-of-intellego)
-  - [User login/signup](#user-loginsignup)
 
 ## Background
 
@@ -40,11 +38,3 @@ Note this is a free Render account, so please be patient with any latencies you 
   - Sequelize
   - JSON Web Token
   - Bcrypt
-
-## Tutorial of Intellego
-
-### User login/signup
-To access Intellego, you can log in with your registered email and password. If you're a new user, you can create a new account by providing your name, email, and password during the sign-up process. This will give you access to all the features and benefits of Intellego.
-
-It's important to note that we take security seriously, and all login and sign-up processes are encrypted and designed to protect your personal information.
-<img src="public/images/readme/login.gif" alt="login.gif"/>
